@@ -3,33 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/mainMenuFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.listrecipies.ui.mainmenufragment.MainFragment"
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.listrecipes.view.mainmenufragment.MainMenuFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
-    <fragment
-        android:id="@+id/pageRecipeFragment"
-        android:name="com.example.listrecipies.ui.listrecipesfragment.PageRecipeFragment"
-        android:label="fragment_page_recipe"
-        tools:layout="@layout/fragment_page_recipe" >
-        <argument
-            android:name="recipe"
-            app:argType="com.example.listrecipies.data.Recipe" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_recipesListFragment"
+            app:destination="@id/recipesListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/listRecipiesFragment"
-        android:name="com.example.listrecipies.ui.listrecipesfragment.ListRecipesFragment"
-        android:label="ListRecipiesFragment" />
+        android:id="@+id/recipesListFragment"
+        android:name="com.example.listrecipes.view.listrecipesfragment.RecipesListFragment"
+        android:label="RecipesListFragment" >
+        <argument
+            android:name="list_recipes"
+            app:argType="com.example.listrecipes.data.ListRecipes[]" />
+    </fragment>
     <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.example.listrecipies.ui.favorites.FavoritesFragment"
-        android:label="FavoritesFragment" />
-    <fragment
-        android:id="@+id/purchasesFragment"
-        android:name="com.example.listrecipies.ui.purchases.PurchasesFragment"
-        android:label="fragment_purchases"
-        tools:layout="@layout/fragment_purchases" />
+        android:id="@+id/pageRecipeFragment"
+        android:name="com.example.listrecipes.view.pagerecipefragment.PageRecipeFragment"
+        android:label="PageRecipeFragment" />
 </navigation>

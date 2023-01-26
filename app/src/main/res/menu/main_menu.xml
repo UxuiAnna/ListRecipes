@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:id="@+id/mainFragment"
-        android:title="Главная" />
+        android:icon="@drawable/breakfast"
+        android:title="Breakfast" />
     <item
-        android:id="@+id/listRecipiesFragment"
-        android:title="Рецепты" />
+        android:icon="@drawable/porridge"
+        android:title="Porridge" />
     <item
-        android:id="@+id/favoritesFragment"
-        android:title="Избранное" />
+        android:icon="@drawable/soup"
+        android:title="Soup" />
     <item
-        android:id="@+id/purchasesFragment"
-        android:title="Покупки" />
+        android:icon="@drawable/lunch"
+        android:title="Fish" />
+    <item
+        android:icon="@drawable/meat"
+        android:title="Meat" />
+    <item
+        android:icon="@drawable/salad"
+        android:title="Salad" />
 </menu>

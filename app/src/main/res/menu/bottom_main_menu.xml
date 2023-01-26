@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@drawable/main_menu"
+        android:title="Main menu" />
+    <item
+        android:id="@+id/listRecipesFragment"
+        android:icon="@drawable/recipes"
+        android:title="Recipes" />
+    <item
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/favorite"
+        android:title="Favorites" />
+    <item
+        android:id="@+id/purchasesFragment"
+        android:icon="@drawable/shop"
+        android:title="Buy" />
+</menu>

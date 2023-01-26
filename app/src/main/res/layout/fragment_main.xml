@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.mainmenufragment.MainFragment" >
+    tools:context=".view.mainmenufragment.MainMenuFragment" >
 
 
     <EditText
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Завтраки" />
+            android:text="Breakfast" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Мясо" />
+            android:text="Meat" />
 
     </androidx.cardview.widget.CardView>
 
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Рыба" />
+            android:text="Fish" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Салаты" />
+            android:text="Salad" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -141,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Супы" />
+            android:text="Soup" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -164,7 +164,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Напитки" />
+            android:text="Drink" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -187,7 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Каши" />
+            android:text="Porridge" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -210,7 +210,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Десерты" />
+            android:text="Desert" />
     </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
