@@ -1,14 +1,14 @@
 package com.example.listrecipes.datasource.local
 
 import androidx.room.*
-import com.example.listrecipes.domain.ListRecipes
+import com.example.listrecipes.domain.Recipe
 
 @Dao
 interface RecipeDao {
     @Query("SELECT * FROM recipes")
-    fun getAllRecipes(): List<ListRecipes>
+    fun getAllRecipes(): List<Recipe>
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRecipe(recipe: ListRecipes)
+    fun insertRecipe(recipe: Recipe)
     @Delete
-    fun deleteRecipe(recipe: ListRecipes)
+    fun deleteRecipe(recipe: Recipe)
 }

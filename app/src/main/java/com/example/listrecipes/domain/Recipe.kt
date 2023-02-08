@@ -7,13 +7,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity(tableName = "Recipes")
-data class ListRecipes (
-    val id: Int,
+data class Recipe (
     @PrimaryKey
-    val name: String,
+    val id: Int,
     val title: String,
     val image: String,
-    val imageType: String,
+    val imageType: String
 ): Parcelable
 
 

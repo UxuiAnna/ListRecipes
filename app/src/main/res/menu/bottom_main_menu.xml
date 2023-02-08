@@ -5,10 +5,7 @@
         android:id="@+id/mainFragment"
         android:icon="@drawable/main_menu"
         android:title="Main menu" />
-    <item
-        android:id="@+id/listRecipesFragment"
-        android:icon="@drawable/recipes"
-        android:title="Recipes" />
+
     <item
         android:id="@+id/favoritesFragment"
         android:icon="@drawable/favorite"

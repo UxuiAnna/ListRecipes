@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.mainmenufragment.MainMenuFragment" >
+    tools:context=".presentation.mainmenu.MainMenuFragment" >
 
 
     <EditText
@@ -149,7 +149,7 @@
         android:layout_width="0dp"
         android:layout_height="140dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/cvPorridge"
+        app:layout_constraintEnd_toStartOf="@id/cvSideDish"
         app:layout_constraintTop_toBottomOf="@id/cvSalad">>
 
         <ImageView

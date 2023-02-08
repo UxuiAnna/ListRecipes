@@ -1,4 +1,4 @@
-package com.example.listrecipes.presentation.mainmenufragment
+package com.example.listrecipes.presentation.mainmenu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.listrecipes.databinding.FragmentMainBinding
-import com.example.listrecipes.domain.ListRecipes
-import com.example.listrecipies.databinding.FragmentMainBinding
+import com.example.listrecipes.domain.Recipe
 
 
 class MainMenuFragment : Fragment() {
@@ -36,13 +35,13 @@ class MainMenuFragment : Fragment() {
         binding.cvSideDish.setOnClickListener{ openListPorridge() }
     }
 
-    private fun openListBreakfast(listRecipes: ListRecipes){
-        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesListFragment(listRecipes) //как передать список? если поставила галочку при создании safe args в навграфе
+    private fun openListBreakfast(recipe: Recipe){
+        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesListFragment(recipe) //как передать список? если поставила галочку при создании safe args в навграфе
         findNavController().navigate(action)
     }
 
-    private fun openListPorridge(listRecipes: ListRecipes){
-        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesListFragment(listRecipes)
+    private fun openListPorridge(recipe: Recipe){
+        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesListFragment(recipe)
         findNavController().navigate(action)
     }
 

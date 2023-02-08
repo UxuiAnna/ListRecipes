@@ -1,4 +1,4 @@
-package com.example.listrecipes.presentation.listrecipesfragment
+package com.example.listrecipes.presentation.listrecipes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.listrecipes.databinding.FragmentListRecipesBinding
-import com.example.listrecipes.domain.ListRecipes
+import com.example.listrecipes.domain.Recipe
 import com.example.listrecipes.presentation.adapters.ListRecipesAdapter
 import com.example.listrecipes.presentation.adapters.RecipesAdapterListener
 
@@ -31,7 +31,7 @@ class RecipesListFragment : Fragment(), RecipesAdapterListener {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.loadRecipes()
-        viewModel.recipes.observe(viewLifecycleOwner){ recipes ->
+        viewModel.recipe.observe(viewLifecycleOwner){ recipes ->
             val adapter = ListRecipesAdapter(recipes, this)
             binding.recyclerView.adapter = adapter
         }
@@ -43,13 +43,13 @@ class RecipesListFragment : Fragment(), RecipesAdapterListener {
     }
 
     //клик по полю в списке открывает страницу с детальной информацией
-    override fun onRecipeItemClick(recipe: ListRecipes) {
+    override fun onRecipeItemClick(recipe: Recipe) {
         val action =             //почемуто не подключается
 //        findNavController().navigate()
 //        findNavController().popBackStack()
     }
 
-    override fun onFavoriteClick(recipe: ListRecipes) {
+    override fun onFavoriteClick(recipe: Recipe) {
         viewModel.onRecipeFavoriteClick(recipe)
     }
 }

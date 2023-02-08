@@ -5,15 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listrecipes.R
-import com.example.listrecipes.domain.ListRecipes
+import com.example.listrecipes.domain.Recipe
 import com.example.listrecipes.databinding.ItemRecipeBinding
 
 interface RecipesAdapterListener{
-    fun onRecipeItemClick(recipe: ListRecipes)
-    fun onFavoriteClick(recipe: ListRecipes)
+    fun onRecipeItemClick(recipe: Recipe)
+    fun onFavoriteClick(recipe: Recipe)
 }
 
-class ListRecipesAdapter(val recipe: List<ListRecipes>, val listener: RecipesAdapterListener ): RecyclerView.Adapter<RecipesViewHolder>() {
+class ListRecipesAdapter(val recipe: List<Recipe>, val listener: RecipesAdapterListener ): RecyclerView.Adapter<RecipesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recipe, parent, false)
         return RecipesViewHolder(view)
@@ -39,7 +39,7 @@ class ListRecipesAdapter(val recipe: List<ListRecipes>, val listener: RecipesAda
 
 class RecipesViewHolder(view: View): RecyclerView.ViewHolder(view){
     val binding = ItemRecipeBinding.bind(view)
-    fun bind(recipe: ListRecipes){
+    fun bind(recipe: Recipe){
         binding.textNameRecipe.text = recipe.name
     }
 }
