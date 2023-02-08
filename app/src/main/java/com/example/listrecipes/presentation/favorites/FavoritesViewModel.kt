@@ -1,15 +1,15 @@
-package com.example.listrecipes.view.favorites
+package com.example.listrecipes.presentation.favorites
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.listrecipes.data.ListRecipes
-import com.example.listrecipes.view.RecipesApp
+import com.example.listrecipes.domain.ListRecipes
+import com.example.listrecipes.datasource.local.RecipesAppDataBase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class FavoritesViewModel: ViewModel() {
-    val db = RecipesApp.db
+    val db = RecipesAppDataBase.db
     var favoritesRecipes = MutableLiveData<List<ListRecipes>>()
 
     fun loadFavoriteRecipes(){

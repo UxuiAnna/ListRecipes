@@ -1,4 +1,4 @@
-package com.example.listrecipes.view.mainmenufragment
+package com.example.listrecipes.presentation.mainmenufragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.listrecipes.data.ListRecipes
 import com.example.listrecipes.databinding.FragmentMainBinding
+import com.example.listrecipes.domain.ListRecipes
 import com.example.listrecipies.databinding.FragmentMainBinding
 
 
@@ -30,17 +30,18 @@ class MainMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.loadMenu()
+
         //подключаю слушатель на иконки в главном меню. по клику на иконку должен открыться список с рецептами данного раздела
-        binding.cvBreakfast.setOnClickListener { openListBreakfast() }   //нужно же подключить навконтроллер в фрагмент? и в слушатель передать сразу список с рецептами завтраков?
-        binding.cvPorridge.setOnClickListener{ openListPorridge() }
+        binding.cvBreakfast.setOnClickListener { openListBreakfast(listRecipes) }   //нужно же подключить навконтроллер в фрагмент? и в слушатель передать сразу список с рецептами завтраков?
+        binding.cvSideDish.setOnClickListener{ openListPorridge() }
     }
 
-    fun openListBreakfast(listRecipes: ListRecipes){
+    private fun openListBreakfast(listRecipes: ListRecipes){
         val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesListFragment(listRecipes) //как передать список? если поставила галочку при создании safe args в навграфе
         findNavController().navigate(action)
     }
 
-    fun openListPorridge(listRecipes: ListRecipes){
+    private fun openListPorridge(listRecipes: ListRecipes){
         val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesListFragment(listRecipes)
         findNavController().navigate(action)
     }

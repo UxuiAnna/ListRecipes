@@ -1,22 +1,22 @@
-package com.example.listrecipes.view.listrecipesfragment
+package com.example.listrecipes.presentation.listrecipesfragment
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.listrecipes.data.ListRecipes
-import com.example.listrecipes.datasource.remote.recipeService
-import com.example.listrecipes.view.RecipesApp
+import com.example.listrecipes.datasource.remote.ApiFactory.recipeService
+import com.example.listrecipes.domain.ListRecipes
+import com.example.listrecipes.datasource.local.RecipesAppDataBase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class RecipesListViewModel : ViewModel() {
-    var db = RecipesApp.db
+    var db = RecipesAppDataBase.db
 
     var recipes = MutableLiveData<List<ListRecipes>>()
 
     fun loadRecipes() {
         viewModelScope.launch(Dispatchers.Main) {
-                val result = recipeService.GetAllRecipes()
+                val result = recipeService.getAllRecipes()
                 recipes.value = result
         }
     }

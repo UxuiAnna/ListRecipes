@@ -4,7 +4,7 @@
     package="com.example.listrecipes">
     <uses-permission android:name="android.permission.INTERNET"/> <!--    7.0 запросить разрешение на доступ к интернету в манифесте-->
     <application
-        android:name="com.example.listrecipes.view.RecipesApp"
+        android:name="com.example.listrecipes.datasource.local.RecipesAppDataBase"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,7 +15,7 @@
         android:theme="@style/Theme.ListRecipies"
         tools:targetApi="31">
         <activity
-            android:name="com.example.listrecipes.view.activity.MainActivity"
+            android:name="com.example.listrecipes.presentation.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

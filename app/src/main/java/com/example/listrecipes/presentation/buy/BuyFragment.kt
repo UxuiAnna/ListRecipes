@@ -1,4 +1,4 @@
-package com.example.listrecipes.view.buy
+package com.example.listrecipes.presentation.buy
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

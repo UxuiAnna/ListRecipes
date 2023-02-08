@@ -6,16 +6,16 @@
         android:title="Breakfast" />
     <item
         android:icon="@drawable/porridge"
-        android:title="Porridge" />
+        android:title="Side dish" />
     <item
         android:icon="@drawable/soup"
         android:title="Soup" />
     <item
         android:icon="@drawable/lunch"
-        android:title="Fish" />
+        android:title="Snack" />
     <item
         android:icon="@drawable/meat"
-        android:title="Meat" />
+        android:title="Main course" />
     <item
         android:icon="@drawable/salad"
         android:title="Salad" />

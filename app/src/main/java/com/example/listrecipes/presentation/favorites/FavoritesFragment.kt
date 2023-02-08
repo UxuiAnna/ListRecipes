@@ -1,4 +1,4 @@
-package com.example.listrecipes.view.favorites
+package com.example.listrecipes.presentation.favorites
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.listrecipes.data.ListRecipes
+import com.example.listrecipes.domain.ListRecipes
 import com.example.listrecipes.databinding.FragmentListRecipiesBinding
 
 class FavoritesFragment : Fragment(),FavoritesAdapterListener {

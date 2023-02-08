@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="com.example.listrecipes.view.mainmenufragment.MainMenuFragment"
+        android:name="com.example.listrecipes.presentation.mainmenufragment.MainMenuFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/recipesListFragment"
-        android:name="com.example.listrecipes.view.listrecipesfragment.RecipesListFragment"
+        android:name="com.example.listrecipes.presentation.listrecipesfragment.RecipesListFragment"
         android:label="RecipesListFragment" >
         <argument
             android:name="list_recipes"
@@ -24,6 +24,6 @@
     </fragment>
     <fragment
         android:id="@+id/pageRecipeFragment"
-        android:name="com.example.listrecipes.view.pagerecipefragment.PageRecipeFragment"
+        android:name="com.example.listrecipes.presentation.pagerecipefragment.PageRecipeFragment"
         android:label="PageRecipeFragment" />
 </navigation>

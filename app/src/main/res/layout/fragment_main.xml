@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Meat" />
+            android:text="Main course" />
 
     </androidx.cardview.widget.CardView>
 
@@ -88,14 +88,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="30dp"
-            android:src="@drawable/lunch" />
+            android:src="@drawable/snack" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Fish" />
+            android:text="Snack" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -133,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="50dp"
+            android:layout_margin="40dp"
             android:src="@drawable/soup" />
 
         <TextView
@@ -168,7 +168,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvPorridge"
+        android:id="@+id/cvSideDish"
         android:layout_width="0dp"
         android:layout_height="140dp"
         app:layout_constraintStart_toEndOf="@id/cvBreakfast"
@@ -187,7 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="15dp"
-            android:text="Porridge" />
+            android:text="Side dish" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView

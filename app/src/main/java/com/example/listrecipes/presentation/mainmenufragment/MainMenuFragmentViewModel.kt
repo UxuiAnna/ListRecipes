@@ -1,4 +1,4 @@
-package com.example.listrecipes.view.mainmenufragment
+package com.example.listrecipes.presentation.mainmenufragment
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

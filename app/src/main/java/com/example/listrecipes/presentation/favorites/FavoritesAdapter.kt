@@ -1,25 +1,24 @@
-package com.example.listrecipes.view.adapters
+package com.example.listrecipes.presentation.favorites
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.listrecipes.R
-import com.example.listrecipes.data.ListRecipes
+import com.example.listrecipes.domain.ListRecipes
 import com.example.listrecipes.databinding.ItemRecipeBinding
 
-interface RecipesAdapterListener{
+interface FavoritesAdapterListener{
     fun onRecipeItemClick(recipe: ListRecipes)
-    fun onFavoriteClick(recipe: ListRecipes)
+    fun deleteFromFavorite(recipe: ListRecipes)
 }
-
-class ListRecipesAdapter(val recipe: List<ListRecipes>, val listener: RecipesAdapterListener ): RecyclerView.Adapter<RecipesViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesViewHolder {
+class FavoritesAdapter(val recipe: List<ListRecipes>, val listener: FavoritesAdapterListener): RecyclerView.Adapter<FavoritesViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recipe, parent, false)
-        return RecipesViewHolder(view)
+        return FavoritesViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: RecipesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {
         val recipe = recipe[position]
         holder.bind(recipe)
 
@@ -27,17 +26,14 @@ class ListRecipesAdapter(val recipe: List<ListRecipes>, val listener: RecipesAda
             listener.onRecipeItemClick(recipe)
         }
 
-        holder.itemView.setOnClickListener {
-            listener.onFavoriteClick(recipe)
-        }
+        holder.binding.
     }
-
     override fun getItemCount(): Int {
         return recipe.size
     }
 }
 
-class RecipesViewHolder(view: View): RecyclerView.ViewHolder(view){
+class FavoritesViewHolder(view: View): RecyclerView.ViewHolder(view){
     val binding = ItemRecipeBinding.bind(view)
     fun bind(recipe: ListRecipes){
         binding.textNameRecipe.text = recipe.name

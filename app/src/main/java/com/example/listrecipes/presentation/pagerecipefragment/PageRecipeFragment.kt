@@ -1,4 +1,4 @@
-package com.example.listrecipes.view.pagerecipefragment
+package com.example.listrecipes.presentation.pagerecipefragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

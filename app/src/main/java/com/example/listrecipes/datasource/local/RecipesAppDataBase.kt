@@ -1,10 +1,9 @@
-package com.example.listrecipes.view
+package com.example.listrecipes.datasource.local
 
 import android.app.Application
 import androidx.room.Room
-import com.example.listrecipes.datasource.local.RecipesDataBase
 
-class RecipesApp: Application(){
+abstract class RecipesAppDataBase: Application(){
     companion object{
         lateinit var db: RecipesDataBase
     }

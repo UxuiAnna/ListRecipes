@@ -1,17 +1,15 @@
-package com.example.listrecipes.view.listrecipesfragment
+package com.example.listrecipes.presentation.listrecipesfragment
 
-import android.graphics.Path
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
-import com.example.listrecipes.data.ListRecipes
-import com.example.listrecipes.view.adapters.ListRecipesAdapter
-import com.example.listrecipes.view.adapters.RecipesAdapterListener
-import com.example.listrecipies.databinding.FragmentListRecipesBinding
+import com.example.listrecipes.databinding.FragmentListRecipesBinding
+import com.example.listrecipes.domain.ListRecipes
+import com.example.listrecipes.presentation.adapters.ListRecipesAdapter
+import com.example.listrecipes.presentation.adapters.RecipesAdapterListener
 
 
 class RecipesListFragment : Fragment(), RecipesAdapterListener {
@@ -46,7 +44,7 @@ class RecipesListFragment : Fragment(), RecipesAdapterListener {
 
     //клик по полю в списке открывает страницу с детальной информацией
     override fun onRecipeItemClick(recipe: ListRecipes) {
-        val action =                //почемуто не подключается
+        val action =             //почемуто не подключается
 //        findNavController().navigate()
 //        findNavController().popBackStack()
     }

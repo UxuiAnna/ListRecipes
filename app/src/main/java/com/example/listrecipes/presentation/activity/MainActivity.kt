@@ -1,11 +1,11 @@
-package com.example.listrecipes.view.activity
+package com.example.listrecipes.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.listrecipies.R
-import com.example.listrecipies.databinding.ActivityMainBinding
+import com.example.listrecipes.R
+import com.example.listrecipes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
