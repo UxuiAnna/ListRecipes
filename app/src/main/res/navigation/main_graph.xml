@@ -13,10 +13,13 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_recipesListFragment"
             app:destination="@id/recipesListFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_listRecipesTypeFragment"
+            app:destination="@id/listRecipesTypeFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipesListFragment"
-        android:name="com.example.listrecipes.presentation.listrecipes.RecipesListFragment"
+        android:name="com.example.listrecipes.presentation.listrecipestypefragment.RecipesListFragment"
         android:label="RecipesListFragment" >
         <argument
             android:name="list_recipes"
@@ -26,4 +29,13 @@
         android:id="@+id/pageRecipeFragment"
         android:name="com.example.listrecipes.presentation.pagerecipe.PageRecipeFragment"
         android:label="PageRecipeFragment" />
+    <fragment
+        android:id="@+id/listRecipesTypeFragment"
+        android:name="com.example.listrecipes.presentation.listrecipestypefragment.ListRecipesTypeFragment"
+        android:label="fragment_list_recipes_type"
+        tools:layout="@layout/fragment_list_recipes_type" >
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
 </navigation>

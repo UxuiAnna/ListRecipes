@@ -28,23 +28,16 @@ class MainMenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.loadMenu()
 
         //подключаю слушатель на иконки в главном меню. по клику на иконку должен открыться список с рецептами данного раздела
-        binding.cvBreakfast.setOnClickListener { openListBreakfast(listRecipes) }   //нужно же подключить навконтроллер в фрагмент? и в слушатель передать сразу список с рецептами завтраков?
-        binding.cvSideDish.setOnClickListener{ openListPorridge() }
+        binding.cvBreakfast.setOnClickListener { openRecipiesForType("breakfast") }   //нужно же подключить навконтроллер в фрагмент? и в слушатель передать сразу список с рецептами завтраков?
+        binding.cvSideDish.setOnClickListener{ openRecipiesForType("side dish") }
     }
 
-    private fun openListBreakfast(recipe: Recipe){
-        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesListFragment(recipe) //как передать список? если поставила галочку при создании safe args в навграфе
+    private fun openRecipiesForType(type: String){
+        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesTypeFragment(type) //как передать список? если поставила галочку при создании safe args в навграфе
         findNavController().navigate(action)
     }
-
-    private fun openListPorridge(recipe: Recipe){
-        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesListFragment(recipe)
-        findNavController().navigate(action)
-    }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
