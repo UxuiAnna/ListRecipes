@@ -23,7 +23,7 @@ class RecipesTypeViewModel @Inject constructor(
 
     var recipes = MutableLiveData<List<Recipe>>()
 
-    init {
+    fun loadRecipes() {
         viewModelScope.launch(Dispatchers.Main) {
             try {
                 val result = recipeService.getAllRecipesForType(args.type)
