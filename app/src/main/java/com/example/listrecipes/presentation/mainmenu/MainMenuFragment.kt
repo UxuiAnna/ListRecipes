@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.listrecipes.databinding.FragmentMainBinding
-import com.example.listrecipes.domain.Recipe
 
 
 class MainMenuFragment : Fragment() {
@@ -30,12 +29,17 @@ class MainMenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //подключаю слушатель на иконки в главном меню. по клику на иконку должен открыться список с рецептами данного раздела
-        binding.cvBreakfast.setOnClickListener { openRecipiesForType("breakfast") }   //нужно же подключить навконтроллер в фрагмент? и в слушатель передать сразу список с рецептами завтраков?
-        binding.cvSideDish.setOnClickListener{ openRecipiesForType("side dish") }
+        binding.cvBreakfast.setOnClickListener { openRecipesForType("breakfast") }   //нужно же подключить навконтроллер в фрагмент? и в слушатель передать сразу список с рецептами завтраков?
+        binding.cvSideDish.setOnClickListener{ openRecipesForType("side dish") }
+        binding.cvDesert.setOnClickListener { openRecipesForType("desert") }
+        binding.cvDrink.setOnClickListener { openRecipesForType("drink") }
+        binding.cvMainCourse.setOnClickListener { openRecipesForType("main course") }
+        binding.cvSalad.setOnClickListener { openRecipesForType("salad") }
+        binding.cvSoup.setOnClickListener { openRecipesForType("soup") }
     }
 
-    private fun openRecipiesForType(type: String){
-        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesTypeFragment(type) //как передать список? если поставила галочку при создании safe args в навграфе
+    private fun openRecipesForType(type: String){
+        val action = MainMenuFragmentDirections.actionMainMenuFragmentToListRecipesTypeFragment(type) //как передать список? если поставила галочку при создании safe args в навграфе
         findNavController().navigate(action)
     }
 

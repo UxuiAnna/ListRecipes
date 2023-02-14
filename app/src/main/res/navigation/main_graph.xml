@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/recipesListFragment"
-        android:name="com.example.listrecipes.presentation.listrecipestypefragment.RecipesListFragment"
+        android:name="com.example.listrecipes.presentation.recipestypefragment.RecipesListFragment"
         android:label="RecipesListFragment" >
         <argument
             android:name="list_recipes"
@@ -31,9 +31,9 @@
         android:label="PageRecipeFragment" />
     <fragment
         android:id="@+id/listRecipesTypeFragment"
-        android:name="com.example.listrecipes.presentation.listrecipestypefragment.ListRecipesTypeFragment"
+        android:name="com.example.listrecipes.presentation.recipestypefragment.RecipesTypeFragment"
         android:label="fragment_list_recipes_type"
-        tools:layout="@layout/fragment_list_recipes_type" >
+        tools:layout="@layout/fragment_recipes_type" >
         <argument
             android:name="type"
             app:argType="string" />

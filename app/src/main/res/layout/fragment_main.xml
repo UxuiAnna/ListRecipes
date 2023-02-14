@@ -33,7 +33,7 @@
         android:id="@+id/cvBreakfast"
         android:layout_width="0dp"
         android:layout_height="140dp"
-        app:layout_constraintEnd_toStartOf="@id/cvMeat"
+        app:layout_constraintEnd_toStartOf="@id/cvMainCourse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchName" >
 
@@ -53,7 +53,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvMeat"
+        android:id="@+id/cvMainCourse"
         android:layout_width="0dp"
         android:layout_height="140dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
         android:layout_width="0dp"
         android:layout_height="140dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/cvMeat"
+        app:layout_constraintEnd_toStartOf="@id/cvMainCourse"
         app:layout_constraintTop_toBottomOf="@id/cvBreakfast">>
 
         <ImageView
