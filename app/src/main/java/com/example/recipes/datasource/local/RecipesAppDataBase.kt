@@ -1,4 +1,4 @@
-package com.example.listrecipes.datasource.local
+package com.example.recipes.datasource.local
 
 import android.app.Application
 import androidx.room.Room

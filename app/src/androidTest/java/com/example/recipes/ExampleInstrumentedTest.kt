@@ -1,4 +1,4 @@
-package com.example.listrecipes
+package com.example.recipes
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

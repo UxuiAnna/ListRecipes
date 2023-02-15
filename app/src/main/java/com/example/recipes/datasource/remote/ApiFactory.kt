@@ -1,7 +1,4 @@
-package com.example.listrecipes.datasource.remote
-
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+package com.example.recipes.datasource.remote
 
 //object ApiFactory {
 //

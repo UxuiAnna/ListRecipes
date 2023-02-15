@@ -1,12 +1,12 @@
-package com.example.listrecipes.presentation.recipestypefragment
+package com.example.recipes.presentation.recipestypefragment
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.listrecipes.datasource.local.RecipeDao
-import com.example.listrecipes.datasource.remote.RecipeService
-import com.example.listrecipes.domain.Recipe
+import com.example.recipes.datasource.local.RecipeDao
+import com.example.recipes.datasource.remote.RecipeService
+import com.example.recipes.domain.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,7 +23,7 @@ class RecipesTypeViewModel @Inject constructor(
 
     var recipes = MutableLiveData<List<Recipe>>()
 
-    fun loadRecipes() {
+    fun loadListRecipesOnClickItem() {
         viewModelScope.launch(Dispatchers.Main) {
             try {
                 val result = recipeService.getAllRecipesForType(args.type)

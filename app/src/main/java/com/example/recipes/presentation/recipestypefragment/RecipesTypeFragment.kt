@@ -1,4 +1,4 @@
-package com.example.listrecipes.presentation.recipestypefragment
+package com.example.recipes.presentation.recipestypefragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.listrecipes.databinding.FragmentRecipesTypeBinding
+import com.example.recipes.domain.Recipe
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RecipesTypeFragment: Fragment() {
+class RecipesTypeFragment: Fragment(),RecipesAdapterListener {
 
     private var _binding: FragmentRecipesTypeBinding? = null
     private val binding get()= _binding!!
@@ -28,9 +30,15 @@ class RecipesTypeFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.loadRecipes()
+        viewModel.loadListRecipesOnClickItem()
         viewModel.recipes.observe(viewLifecycleOwner){ recipes ->
-
+            val recipesAdapter = RecipesAdapter(recipes, this)
+            binding.rVType.adapter = recipesAdapter
         }
+    }
+
+    override fun onRecipeItemClick(recipe: Recipe) {
+        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment()
+        findNavController().navigate(action)
     }
 }

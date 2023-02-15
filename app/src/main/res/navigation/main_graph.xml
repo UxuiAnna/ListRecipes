@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="com.example.listrecipes.presentation.mainmenu.MainMenuFragment"
+        android:name="com.example.recipes.presentation.mainmenu.MainMenuFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainMenuFragment_to_recipesListFragment"
             app:destination="@id/recipesListFragment" />
         <action
-            android:id="@+id/action_mainMenuFragment_to_listRecipesTypeFragment"
-            app:destination="@id/listRecipesTypeFragment" />
+            android:id="@+id/action_mainMenuFragment_to_RecipesTypeFragment"
+            app:destination="@id/recipesTypeFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipesListFragment"
-        android:name="com.example.listrecipes.presentation.recipestypefragment.RecipesListFragment"
+        android:name="com.example.recipes.presentation.recipestypefragment.RecipesListFragment"
         android:label="RecipesListFragment" >
         <argument
             android:name="list_recipes"
@@ -27,15 +27,18 @@
     </fragment>
     <fragment
         android:id="@+id/pageRecipeFragment"
-        android:name="com.example.listrecipes.presentation.pagerecipe.PageRecipeFragment"
+        android:name="com.example.recipes.presentation.pagerecipe.PageRecipeFragment"
         android:label="PageRecipeFragment" />
     <fragment
-        android:id="@+id/listRecipesTypeFragment"
-        android:name="com.example.listrecipes.presentation.recipestypefragment.RecipesTypeFragment"
-        android:label="fragment_list_recipes_type"
-        tools:layout="@layout/fragment_recipes_type" >
+        android:id="@+id/recipesTypeFragment"
+        android:name="com.example.recipes.presentation.recipestypefragment.RecipesTypeFragment"
+        android:label="fragment_recipes_type"
+        tools:layout="@layout/fragment_recipes_type">
         <argument
             android:name="type"
             app:argType="string" />
+        <action
+            android:id="@+id/action_listRecipesTypeFragment_to_pageRecipeFragment"
+            app:destination="@id/pageRecipeFragment" />
     </fragment>
 </navigation>

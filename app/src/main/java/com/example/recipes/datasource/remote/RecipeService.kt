@@ -1,6 +1,6 @@
-package com.example.listrecipes.datasource.remote
+package com.example.recipes.datasource.remote
 
-import com.example.listrecipes.domain.Recipe
+import com.example.recipes.domain.Recipe
 import retrofit2.http.GET
 import retrofit2.http.Query
 

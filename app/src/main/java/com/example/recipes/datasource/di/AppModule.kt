@@ -1,10 +1,10 @@
-package com.example.listrecipes.datasource.di
+package com.example.recipes.datasource.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.listrecipes.datasource.local.RecipeDao
-import com.example.listrecipes.datasource.local.RecipesDataBase
-import com.example.listrecipes.datasource.remote.RecipeService
+import com.example.recipes.datasource.local.RecipeDao
+import com.example.recipes.datasource.local.RecipesDataBase
+import com.example.recipes.datasource.remote.RecipeService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.example.listrecipes.presentation.mainmenu
+package com.example.recipes.presentation.mainmenu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,13 +9,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.listrecipes.databinding.FragmentMainBinding
 
-
 class MainMenuFragment : Fragment() {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MainMenuFragmentViewModel by viewModels()
+ //   private val viewModel: MainMenuFragmentViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +28,7 @@ class MainMenuFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //подключаю слушатель на иконки в главном меню. по клику на иконку должен открыться список с рецептами данного раздела
-        binding.cvBreakfast.setOnClickListener { openRecipesForType("breakfast") }   //нужно же подключить навконтроллер в фрагмент? и в слушатель передать сразу список с рецептами завтраков?
+        binding.cvBreakfast.setOnClickListener { openRecipesForType("breakfast") }
         binding.cvSideDish.setOnClickListener{ openRecipesForType("side dish") }
         binding.cvDesert.setOnClickListener { openRecipesForType("desert") }
         binding.cvDrink.setOnClickListener { openRecipesForType("drink") }
@@ -39,7 +38,7 @@ class MainMenuFragment : Fragment() {
     }
 
     private fun openRecipesForType(type: String){
-        val action = MainMenuFragmentDirections.actionMainMenuFragmentToListRecipesTypeFragment(type) //как передать список? если поставила галочку при создании safe args в навграфе
+        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesTypeFragment(type)
         findNavController().navigate(action)
     }
 
