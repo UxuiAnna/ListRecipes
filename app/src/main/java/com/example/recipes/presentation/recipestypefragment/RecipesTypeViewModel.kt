@@ -26,7 +26,7 @@ class RecipesTypeViewModel @Inject constructor(
     fun loadListRecipesOnClickItem() {
         viewModelScope.launch(Dispatchers.Main) {
             try {
-                val result = recipeService.getAllRecipesForType(args.type)
+                val result = recipeService.getAllRecipesForType(args.type).results
                 recipes.value = result
             } catch (e: Exception){
 

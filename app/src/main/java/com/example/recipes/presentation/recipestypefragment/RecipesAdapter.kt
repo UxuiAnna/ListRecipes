@@ -39,7 +39,7 @@ class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(recipe: Recipe) {
         binding.textNameRecipe.text = recipe.title
-        binding.imageRecipe.setImageResource()//как передать ссылку на картинку?
+        //binding.imageRecipe.setImageResource()//как передать ссылку на картинку?
     }
 }
 
