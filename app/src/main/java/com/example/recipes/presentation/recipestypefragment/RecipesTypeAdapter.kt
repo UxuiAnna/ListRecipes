@@ -12,7 +12,7 @@ interface TypeAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
 }
 
-class RecipesTypeAdapter(val recipes: List<Recipe>, val listener: TypeAdapterListener) :
+class RecipesTypeAdapter(val recipes: List<Recipe>,val listener: TypeAdapterListener) :
     RecyclerView.Adapter<RecipeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
