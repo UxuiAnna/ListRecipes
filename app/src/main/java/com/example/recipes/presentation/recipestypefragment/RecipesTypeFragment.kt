@@ -38,7 +38,7 @@ class RecipesTypeFragment: Fragment(),TypeAdapterListener {
     }
 
     override fun onRecipeItemClick(recipe: Recipe) {
-        val action = RecipesTypeFragmentDirections.actionRecipesTypeFragmentToPageRecipeFragment()
+        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment()
         findNavController().navigate(action)
     }
 }

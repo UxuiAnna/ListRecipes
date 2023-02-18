@@ -30,7 +30,7 @@
             android:name="type"
             app:argType="string" />
         <action
-            android:id="@+id/action_recipesTypeFragment_to_pageRecipeFragment"
+            android:id="@+id/action_listRecipesTypeFragment_to_pageRecipeFragment"
             app:destination="@id/pageRecipeFragment" />
     </fragment>
     <fragment
