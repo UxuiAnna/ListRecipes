@@ -8,12 +8,13 @@ import com.example.recipes.R
 import com.example.recipes.databinding.ItemRecipeBinding
 import com.example.recipes.domain.Recipe
 
-interface RecipesAdapterListener {
+interface SearchAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
 }
 
-class RecipesSearchAdapter(val recipes: List<Recipe>, val listener: RecipesAdapterListener) :
+class RecipesSearchAdapter(val recipes: List<Recipe>, val listener: SearchAdapterListener) :
     RecyclerView.Adapter<RecipesSearchViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesSearchViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recipe, parent, false)
         return RecipesSearchViewHolder(view)

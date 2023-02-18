@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.navigation.fragment.navArgs
 import com.example.recipes.databinding.FragmentRecipesSearchBinding
+import com.example.recipes.domain.Recipe
+import dagger.hilt.android.AndroidEntryPoint
 
-class RecipesSearchFragment : Fragment() {
+@AndroidEntryPoint
+class RecipesSearchFragment : Fragment(), SearchAdapterListener {
     private var _binding: FragmentRecipesSearchBinding? = null
     private val binding get() = _binding!!
     private val viewModel: RecipesSearchViewModel by viewModels()
@@ -25,14 +26,20 @@ class RecipesSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.loadListRecipesFromSearch()
-        viewModel.recipes.observe(viewLifecycleOwner){
+        viewModel.loadRecipesOnSearchButton()
+        viewModel.recipes.observe(viewLifecycleOwner){ recipes ->
+            val recipesAdapter = RecipesSearchAdapter(recipes, this)
+            binding.rVSearch.adapter = recipesAdapter
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onRecipeItemClick(recipe: Recipe) {
+        TODO("Not yet implemented")
     }
 }
 

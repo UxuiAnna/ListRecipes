@@ -8,11 +8,11 @@ import com.example.recipes.R
 import com.example.recipes.databinding.ItemRecipeBinding
 import com.example.recipes.domain.Recipe
 
-interface RecipesAdapterListener {
+interface TypeAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
 }
 
-class RecipesAdapter(val recipes: List<Recipe>, val listener: RecipesAdapterListener) :
+class RecipesTypeAdapter(val recipes: List<Recipe>, val listener: TypeAdapterListener) :
     RecyclerView.Adapter<RecipeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -40,6 +40,7 @@ class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(recipe: Recipe) {
         binding.textNameRecipe.text = recipe.title
         //binding.imageRecipe.setImageResource()//как передать ссылку на картинку?
+        //binding.descriptionRecipe //почему не находит?
     }
 }
 

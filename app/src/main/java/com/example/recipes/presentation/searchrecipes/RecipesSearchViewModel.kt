@@ -21,14 +21,16 @@ class RecipesSearchViewModel @Inject constructor(
 
     private val args = RecipesSearchFragmentArgs.fromSavedStateHandle(savedStateHandle)
     val recipes = MutableLiveData<List<Recipe>>()
+    val errorLayoutIsVisible = MutableLiveData<Boolean>(false)
 
-    fun loadListRecipesFromSearch() {
+    fun loadRecipesOnSearchButton() {
         viewModelScope.launch(Dispatchers.Main) {
             try {
+                errorLayoutIsVisible.value = false
                 val result = recipeService.getRecipesForSearch(args.search).results
                 recipes.value = result
             } catch (e: Exception){
-
+                errorLayoutIsVisible.value = true
             }
         }
     }

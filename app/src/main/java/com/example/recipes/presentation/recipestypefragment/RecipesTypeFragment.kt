@@ -12,7 +12,7 @@ import com.example.recipes.domain.Recipe
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RecipesTypeFragment: Fragment(),RecipesAdapterListener {
+class RecipesTypeFragment: Fragment(),TypeAdapterListener {
 
     private var _binding: FragmentRecipesTypeBinding? = null
     private val binding get()= _binding!!
@@ -32,7 +32,7 @@ class RecipesTypeFragment: Fragment(),RecipesAdapterListener {
 
         viewModel.loadListRecipesOnClickItem()
         viewModel.recipes.observe(viewLifecycleOwner){ recipes ->
-            val recipesAdapter = RecipesAdapter(recipes, this)
+            val recipesAdapter = RecipesTypeAdapter(recipes, this)
             binding.rVType.adapter = recipesAdapter
         }
     }

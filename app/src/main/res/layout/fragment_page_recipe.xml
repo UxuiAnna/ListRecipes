@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.pagerecipefragment.PageRecipeFragment">
+    tools:context="com.example.recipes.presentation.pagerecipe.PageRecipeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,11 +23,14 @@
         <TextView
             android:id="@+id/nameRecipe"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageRecipe"
+            android:layout_marginStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
+            android:textColor="#454545"
+            android:textSize="22sp"
+            android:textStyle="bold"
             android:text="Name recipe" />
 
         <TextView
@@ -37,8 +40,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
             android:text="Description recipe" />
+
+        <ImageView
+            android:id="@+id/addToFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/nameRecipe"
+            app:layout_constraintBottom_toBottomOf="@id/nameRecipe"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/favorite" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

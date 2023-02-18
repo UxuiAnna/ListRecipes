@@ -22,14 +22,16 @@ class RecipesTypeViewModel @Inject constructor(
     private val args = RecipesTypeFragmentArgs.fromSavedStateHandle(savedStateHandle)
 
     val recipes = MutableLiveData<List<Recipe>>()
+    val errorLayoutIsVisible = MutableLiveData<Boolean>(false)
 
     fun loadListRecipesOnClickItem() {
         viewModelScope.launch(Dispatchers.Main) {
             try {
+                errorLayoutIsVisible.value = false
                 val result = recipeService.getAllRecipesForType(args.type).results
                 recipes.value = result
             } catch (e: Exception){
-
+                errorLayoutIsVisible.value = true
             }
         }
     }
