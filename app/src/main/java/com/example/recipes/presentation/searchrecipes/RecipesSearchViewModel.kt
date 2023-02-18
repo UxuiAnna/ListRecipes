@@ -1,4 +1,4 @@
-package com.example.recipes.presentation.recipestypefragment
+package com.example.recipes.presentation.searchrecipes
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
@@ -13,20 +13,19 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RecipesTypeViewModel @Inject constructor(
+class RecipesSearchViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     val recipeDao: RecipeDao,
     val recipeService: RecipeService
-) : ViewModel() {
+): ViewModel() {
 
-    private val args = RecipesTypeFragmentArgs.fromSavedStateHandle(savedStateHandle)
-
+    private val args = RecipesSearchFragmentArgs.fromSavedStateHandle(savedStateHandle)
     val recipes = MutableLiveData<List<Recipe>>()
 
-    fun loadListRecipesOnClickItem() {
+    fun loadListRecipesFromSearch() {
         viewModelScope.launch(Dispatchers.Main) {
             try {
-                val result = recipeService.getAllRecipesForType(args.type).results
+                val result = recipeService.getRecipesForSearch(args.search).results
                 recipes.value = result
             } catch (e: Exception){
 

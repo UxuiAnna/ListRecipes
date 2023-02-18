@@ -5,9 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.listrecipes.databinding.FragmentMainBinding
+import com.example.recipes.databinding.FragmentMainBinding
 
 class MainMenuFragment : Fragment() {
 
@@ -27,7 +26,6 @@ class MainMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //подключаю слушатель на иконки в главном меню. по клику на иконку должен открыться список с рецептами данного раздела
         binding.cvBreakfast.setOnClickListener { openRecipesForType("breakfast") }
         binding.cvSideDish.setOnClickListener{ openRecipesForType("side dish") }
         binding.cvDesert.setOnClickListener { openRecipesForType("desert") }
@@ -35,10 +33,17 @@ class MainMenuFragment : Fragment() {
         binding.cvMainCourse.setOnClickListener { openRecipesForType("main course") }
         binding.cvSalad.setOnClickListener { openRecipesForType("salad") }
         binding.cvSoup.setOnClickListener { openRecipesForType("soup") }
+
+        binding.searchButton.setOnClickListener{ openRecipeForSearch("search")}   // как передавать текст, введенный в строку поиска?
     }
 
     private fun openRecipesForType(type: String){
         val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesTypeFragment(type)
+        findNavController().navigate(action)
+    }
+
+    private fun openRecipeForSearch(search: String){
+        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesSearchFragment(search)
         findNavController().navigate(action)
     }
 

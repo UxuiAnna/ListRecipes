@@ -4,15 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.listrecipes.R
-import com.example.listrecipes.databinding.ItemRecipeBinding
+import com.example.recipes.R
+import com.example.recipes.databinding.ItemRecipeBinding
 import com.example.recipes.domain.Recipe
 
 interface RecipesAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
 }
 
-class RecipesAdapter(val recipes: List<Recipe>, listener: RecipesAdapterListener) :
+class RecipesAdapter(val recipes: List<Recipe>, val listener: RecipesAdapterListener) :
     RecyclerView.Adapter<RecipeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -25,7 +25,7 @@ class RecipesAdapter(val recipes: List<Recipe>, listener: RecipesAdapterListener
         holder.bind(recipe)
 
         holder.itemView.setOnClickListener {
-
+            listener.onRecipeItemClick(recipe)
         }
     }
 

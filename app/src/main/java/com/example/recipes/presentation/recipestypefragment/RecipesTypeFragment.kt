@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.listrecipes.databinding.FragmentRecipesTypeBinding
+import com.example.recipes.databinding.FragmentRecipesTypeBinding
 import com.example.recipes.domain.Recipe
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,7 +38,7 @@ class RecipesTypeFragment: Fragment(),RecipesAdapterListener {
     }
 
     override fun onRecipeItemClick(recipe: Recipe) {
-        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment()
+        val action = RecipesTypeFragmentDirections.actionRecipesTypeFragmentToPageRecipeFragment()
         findNavController().navigate(action)
     }
 }
