@@ -5,6 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recipes.datasource.local.RecipeDao
+import com.example.recipes.datasource.local.RecipesAppDataBase.Companion.db
 import com.example.recipes.datasource.remote.RecipeService
 import com.example.recipes.domain.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -34,5 +35,9 @@ class RecipesTypeViewModel @Inject constructor(
                 errorLayoutIsVisible.value = true
             }
         }
+    }
+
+    fun onRecipeFavoriteClick(recipe: Recipe){
+        db.getRecipesDao().insertRecipe(recipe)
     }
 }

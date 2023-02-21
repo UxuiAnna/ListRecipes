@@ -10,6 +10,7 @@ import com.example.recipes.domain.Recipe
 
 interface TypeAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
+    fun onRecipeFavoriteClick(recipe: Recipe)
 }
 
 class RecipesTypeAdapter(val recipes: List<Recipe>,val listener: TypeAdapterListener) :
@@ -27,6 +28,10 @@ class RecipesTypeAdapter(val recipes: List<Recipe>,val listener: TypeAdapterList
         holder.itemView.setOnClickListener {
             listener.onRecipeItemClick(recipe)
         }
+
+        holder.binding.iconFavorite.setOnClickListener{
+            listener.onRecipeFavoriteClick(recipe)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -39,8 +44,7 @@ class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(recipe: Recipe) {
         binding.textNameRecipe.text = recipe.title
-        //binding.imageRecipe.setImageResource()//как передать ссылку на картинку?
-        //binding.descriptionRecipe //почему не находит?
+        binding.imageRecipe.setImageResource()//как передать ссылку на картинку?
     }
 }
 

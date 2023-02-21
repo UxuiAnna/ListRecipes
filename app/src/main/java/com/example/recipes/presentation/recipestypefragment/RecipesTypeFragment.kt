@@ -36,9 +36,14 @@ class RecipesTypeFragment: Fragment(),TypeAdapterListener {
             binding.rVType.adapter = recipesAdapter
         }
     }
-
+    //открыть страницу рецепта из списка (по типу)
     override fun onRecipeItemClick(recipe: Recipe) {
         val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment()
         findNavController().navigate(action)
+    }
+
+    //добавить рецепт в список избранное
+    override fun onRecipeFavoriteClick(recipe: Recipe) {
+        viewModel.onRecipeFavoriteClick(recipe)
     }
 }

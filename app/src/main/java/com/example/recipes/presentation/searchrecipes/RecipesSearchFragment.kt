@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.recipes.databinding.FragmentRecipesSearchBinding
 import com.example.recipes.domain.Recipe
+import com.example.recipes.presentation.recipestypefragment.RecipesTypeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,9 +39,14 @@ class RecipesSearchFragment : Fragment(), SearchAdapterListener {
         super.onDestroyView()
         _binding = null
     }
-
+//открыть страницу рецепта из списка (со списка из поиска)
     override fun onRecipeItemClick(recipe: Recipe) {
-        TODO("Not yet implemented")
+        val action = RecipesSearchFragmentDirections.actionRecipesSearchFragmentToPageRecipeFragment2()
+        findNavController().navigate(action)
+    }
+
+    override fun onRecipeFavoriteClick(recipe: Recipe) {
+        viewModel.onRecipeFavoriteClick(recipe)
     }
 }
 

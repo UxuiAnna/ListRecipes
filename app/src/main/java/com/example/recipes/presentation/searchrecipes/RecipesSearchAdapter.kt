@@ -10,6 +10,7 @@ import com.example.recipes.domain.Recipe
 
 interface SearchAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
+    fun onRecipeFavoriteClick(recipe: Recipe)
 }
 
 class RecipesSearchAdapter(val recipes: List<Recipe>, val listener: SearchAdapterListener) :
@@ -26,6 +27,10 @@ class RecipesSearchAdapter(val recipes: List<Recipe>, val listener: SearchAdapte
 
         holder.itemView.setOnClickListener {
             listener.onRecipeItemClick(recipe)
+        }
+
+        holder.binding.iconFavorite.setOnClickListener {
+            listener.onRecipeFavoriteClick(recipe)
         }
     }
 

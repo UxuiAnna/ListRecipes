@@ -41,5 +41,12 @@
         <argument
             android:name="search"
             app:argType="string" />
+        <action
+            android:id="@+id/action_recipesSearchFragment_to_pageRecipeFragment2"
+            app:destination="@id/pageRecipeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment2"
+        android:name="com.example.recipes.presentation.favorites.FavoritesFragment"
+        android:label="FavoritesFragment" />
 </navigation>
