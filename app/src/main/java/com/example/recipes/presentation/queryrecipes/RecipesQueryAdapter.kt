@@ -1,4 +1,4 @@
-package com.example.recipes.presentation.searchrecipes
+package com.example.recipes.presentation.queryrecipes
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,20 +8,20 @@ import com.example.recipes.R
 import com.example.recipes.databinding.ItemRecipeBinding
 import com.example.recipes.domain.Recipe
 
-interface SearchAdapterListener {
+interface QueryAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
     fun onRecipeFavoriteClick(recipe: Recipe)
 }
 
-class RecipesSearchAdapter(val recipes: List<Recipe>, val listener: SearchAdapterListener) :
-    RecyclerView.Adapter<RecipesSearchViewHolder>() {
+class RecipesQueryAdapter(val recipes: List<Recipe>, val listener: QueryAdapterListener) :
+    RecyclerView.Adapter<RecipesQueryViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesSearchViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesQueryViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recipe, parent, false)
-        return RecipesSearchViewHolder(view)
+        return RecipesQueryViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: RecipesSearchViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecipesQueryViewHolder, position: Int) {
         val recipe = recipes[position]
         holder.bind(recipe)
 
@@ -39,7 +39,7 @@ class RecipesSearchAdapter(val recipes: List<Recipe>, val listener: SearchAdapte
     }
 }
 
-class RecipesSearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class RecipesQueryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val binding = ItemRecipeBinding.bind(view)
     fun bind(recipe: Recipe) {
         binding.textNameRecipe.text = recipe.title

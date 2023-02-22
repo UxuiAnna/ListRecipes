@@ -14,8 +14,8 @@
             android:id="@+id/action_mainMenuFragment_to_RecipesTypeFragment"
             app:destination="@id/recipesTypeFragment" />
         <action
-            android:id="@+id/action_mainMenuFragment_to_recipesSearchFragment"
-            app:destination="@id/recipesSearchFragment" />
+            android:id="@+id/action_mainMenuFragment_to_recipesQueryFragment"
+            app:destination="@id/recipesQueryFragment" />
     </fragment>
     <fragment
         android:id="@+id/pageRecipeFragment"
@@ -34,15 +34,15 @@
             app:destination="@id/pageRecipeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/recipesSearchFragment"
-        android:name="com.example.recipes.presentation.searchrecipes.RecipesSearchFragment"
-        android:label="fragment_recipes_search"
-        tools:layout="@layout/fragment_recipes_search" >
+        android:id="@+id/recipesQueryFragment"
+        android:name="com.example.recipes.presentation.queryrecipes.RecipesQueryFragment"
+        android:label="fragment_recipes_query"
+        tools:layout="@layout/fragment_recipes_query">
         <argument
-            android:name="search"
+            android:name="query"
             app:argType="string" />
         <action
-            android:id="@+id/action_recipesSearchFragment_to_pageRecipeFragment2"
+            android:id="@+id/action_recipesQueryFragment_to_pageRecipeFragment"
             app:destination="@id/pageRecipeFragment" />
     </fragment>
     <fragment
