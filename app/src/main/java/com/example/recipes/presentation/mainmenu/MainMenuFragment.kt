@@ -43,7 +43,8 @@ class MainMenuFragment : Fragment() {
     }
 
     private fun openRecipesForQuery(query: String){
-        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesSearchFragment(query)
+        val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesQueryFragment(query)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
