@@ -4,7 +4,7 @@
     package="com.example.recipes">
     <uses-permission android:name="android.permission.INTERNET"/> <!--    7.0 запросить разрешение на доступ к интернету в манифесте-->
     <application
-        android:name="com.example.recipes.datasource.local.RecipesAppDataBase"
+        android:name="com.example.recipes.datasource.local.RecipesApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

@@ -5,7 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recipes.datasource.local.RecipeDao
-import com.example.recipes.datasource.local.RecipesAppDataBase.Companion.db
+import com.example.recipes.datasource.local.RecipesApp.Companion.db
 import com.example.recipes.datasource.remote.RecipeService
 import com.example.recipes.domain.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel

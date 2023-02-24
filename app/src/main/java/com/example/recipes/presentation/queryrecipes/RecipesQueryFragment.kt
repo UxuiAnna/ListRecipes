@@ -47,7 +47,7 @@ class RecipesQueryFragment : Fragment(), QueryAdapterListener {
     }
 
     override fun onRecipeFavoriteClick(recipe: Recipe) {
-        viewModel.onRecipeFavoriteClick(recipe)
+      viewModel.onRecipeFavoriteClick(recipe)
     }
 }
 

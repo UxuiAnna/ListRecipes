@@ -17,17 +17,24 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 class AppModule {
+
     @Provides
     @Singleton
-    fun provideRecipesDao(@ApplicationContext context: Context): RecipeDao{
-        val db = Room.databaseBuilder(context, RecipesDataBase::class.java, "recipesDb").allowMainThreadQueries().build()
-        return db.getRecipesDao()
+    fun provideRecipesBD(@ApplicationContext context: Context): RecipesDataBase {
+        return Room.databaseBuilder(context, RecipesDataBase::class.java, "recipesDb")
+            .allowMainThreadQueries().build()
     }
 
     @Provides
     @Singleton
-    fun provideRecipeService(@ApplicationContext context: Context): RecipeService{
-        var retrofit = Retrofit.Builder()
+    fun provideRecipesDao(database: RecipesDataBase): RecipeDao{
+        return database.getRecipesDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRecipeService(): RecipeService{
+        val retrofit = Retrofit.Builder()
             .baseUrl("https://api.spoonacular.com/recipes/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.recipes.databinding.FragmentMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class MainMenuFragment : Fragment() {
 

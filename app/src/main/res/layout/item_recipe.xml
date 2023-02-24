@@ -35,7 +35,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/textNameRecipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textNameRecipe"
-        app:srcCompat="@drawable/icon_favorite"/>
+        app:srcCompat="@drawable/favorite"/>
+
+    <ImageView
+        android:id="@+id/iconDelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textNameRecipe"
+        app:layout_constraintEnd_toStartOf="@id/iconFavorite"
+        app:layout_constraintTop_toTopOf="@+id/textNameRecipe"
+        app:srcCompat="@drawable/delete"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

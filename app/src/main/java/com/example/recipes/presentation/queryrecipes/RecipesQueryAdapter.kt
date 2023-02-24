@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recipes.R
 import com.example.recipes.databinding.ItemRecipeBinding
 import com.example.recipes.domain.Recipe
+import javax.inject.Inject
 
 interface QueryAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
     fun onRecipeFavoriteClick(recipe: Recipe)
 }
 
-class RecipesQueryAdapter(val recipes: List<Recipe>, val listener: QueryAdapterListener) :
+class RecipesQueryAdapter @Inject constructor(val recipes: List<Recipe>, val listener: QueryAdapterListener) :
     RecyclerView.Adapter<RecipesQueryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesQueryViewHolder {

@@ -48,5 +48,9 @@
     <fragment
         android:id="@+id/favoritesFragment2"
         android:name="com.example.recipes.presentation.favorites.FavoritesFragment"
-        android:label="FavoritesFragment" />
+        android:label="FavoritesFragment" >
+        <action
+            android:id="@+id/action_favoritesFragment2_to_pageRecipeFragment"
+            app:destination="@id/pageRecipeFragment" />
+    </fragment>
 </navigation>
