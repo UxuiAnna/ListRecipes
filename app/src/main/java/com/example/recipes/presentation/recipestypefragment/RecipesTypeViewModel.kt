@@ -38,6 +38,6 @@ class RecipesTypeViewModel @Inject constructor(
     }
 
     fun onRecipeFavoriteClick(recipe: Recipe){
-        db.getRecipesDao().insertRecipe(recipe)
+        recipeDao.insertRecipe(recipe)
     }
 }

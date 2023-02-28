@@ -9,7 +9,6 @@ import javax.inject.Singleton
 
 //class Recipe - является таблицей в БД
 @Singleton
-@Parcelize
 @Entity(tableName = "recipes")
 data class Recipe (
     @PrimaryKey(autoGenerate = true)
@@ -17,7 +16,5 @@ data class Recipe (
     val title: String,
     val image: String,
     val imageType: String
-): Parcelable
+)
 
-
-//https://spoonacular.com/food-api/docs#Meal-Types разделение по категориямЖ завтрак, обед и пр

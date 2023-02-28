@@ -28,7 +28,7 @@ class AppModule {
     @Provides
     @Singleton
     fun provideRecipesDao(database: RecipesDataBase): RecipeDao{
-        return database.getRecipesDao()
+        return database.getRecipeDao()
     }
 
     @Provides

@@ -5,6 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recipes.datasource.local.RecipeDao
+import com.example.recipes.datasource.local.RecipesDataBase
 import com.example.recipes.domain.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -13,7 +14,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FavoritesViewModel @Inject constructor(
-    savedStateHandle: SavedStateHandle,
     val recipeDao: RecipeDao
 ): ViewModel(){
     var favoriteRecipes = MutableLiveData<List<Recipe>>()

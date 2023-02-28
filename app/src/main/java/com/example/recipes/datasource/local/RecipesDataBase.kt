@@ -10,6 +10,6 @@ import dagger.hilt.android.HiltAndroidApp
 @Database(entities = [Recipe::class], version = 1)  //создание локальной БД посредством Room
 abstract class RecipesDataBase : RoomDatabase() {
 
-    abstract fun getRecipesDao(): RecipeDao
+    abstract fun getRecipeDao(): RecipeDao
 }
 
