@@ -11,10 +11,11 @@ import javax.inject.Singleton
 @Singleton
 @Entity(tableName = "recipes")
 data class Recipe (
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val id: Int,
     val title: String,
     val image: String,
-    val imageType: String
+    val imageType: String,
+    val isInFavorite: Boolean = false
 )
 

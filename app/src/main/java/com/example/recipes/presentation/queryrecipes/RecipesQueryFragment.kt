@@ -42,7 +42,7 @@ class RecipesQueryFragment : Fragment(), QueryAdapterListener {
     //открыть страницу рецепта из списка (со списка из поиска)
     override fun onRecipeItemClick(recipe: Recipe) {
         val action =
-            RecipesQueryFragmentDirections.actionRecipesQueryFragmentToPageRecipeFragment()
+            RecipesQueryFragmentDirections.actionRecipesQueryFragmentToPageRecipeFragment(recipe)
         findNavController().navigate(action)
     }
 

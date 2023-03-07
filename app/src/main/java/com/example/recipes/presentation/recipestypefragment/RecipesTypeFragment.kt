@@ -35,15 +35,36 @@ class RecipesTypeFragment: Fragment(),TypeAdapterListener {
             val recipesAdapter = RecipesTypeAdapter(recipes, this)
             binding.rVType.adapter = recipesAdapter
         }
+
+        viewModel.errorLayoutIsVisible.observe(viewLifecycleOwner) { isVisible ->
+            if (isVisible)
+                showError()
+            else
+                hideError()
+        }
     }
+
+    fun showError() {
+        binding.errorView.visibility = View.VISIBLE
+    }
+
+    fun hideError() {
+        binding.errorView.visibility = View.INVISIBLE
+    }
+
+
     //открыть страницу рецепта из списка (по типу)
     override fun onRecipeItemClick(recipe: Recipe) {
-        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment()
+        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment(recipe)
         findNavController().navigate(action)
     }
 
     //добавить рецепт в список избранное
     override fun onRecipeFavoriteClick(recipe: Recipe) {
         viewModel.onRecipeFavoriteClick(recipe)
+    }
+
+    override fun onFavoriteDeleteClick(recipe: Recipe) {
+        TODO("Not yet implemented")
     }
 }

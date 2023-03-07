@@ -9,21 +9,21 @@ import retrofit2.http.Query
 interface RecipeService {
 
     @GET("complexSearch")
-    fun getAllRecipesForType(
+    suspend fun getAllRecipesForType(
         @Query("type") type: String,
-        @Query("number") number: Int =100,
+        @Query("number") number: Int =10,
         @Query("apiKey") apiKey: String = "de7bf41978a04f17bd0f0e4859d9fee0"
     ): ComplexSearchRecipe
 
     @GET("complexSearch")
-    fun getRecipesForSearch(
+    suspend fun getRecipesForSearch(
         @Query("query") query: String,
         @Query("number") number: Int =100,
         @Query("apiKey") apiKey: String = "de7bf41978a04f17bd0f0e4859d9fee0"
     ): ComplexSearchRecipe
 
     @GET("complexSearch")
-    fun getAllRecipes(
+    suspend fun getAllRecipes(
         @Query("number") number: Int =100,
         @Query("apiKey") apiKey: String = "de7bf41978a04f17bd0f0e4859d9fee0"
     ): ComplexSearchRecipe

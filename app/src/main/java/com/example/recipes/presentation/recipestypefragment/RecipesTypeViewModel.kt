@@ -1,11 +1,11 @@
 package com.example.recipes.presentation.recipestypefragment
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recipes.datasource.local.RecipeDao
-import com.example.recipes.datasource.local.RecipesApp.Companion.db
 import com.example.recipes.datasource.remote.RecipeService
 import com.example.recipes.domain.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,15 +23,23 @@ class RecipesTypeViewModel @Inject constructor(
     private val args = RecipesTypeFragmentArgs.fromSavedStateHandle(savedStateHandle)
 
     val recipes = MutableLiveData<List<Recipe>>()
-    private val errorLayoutIsVisible = MutableLiveData<Boolean>(false)
+    val errorLayoutIsVisible = MutableLiveData<Boolean>(false)
 
     fun loadListRecipesOnClickItem() {
         viewModelScope.launch(Dispatchers.Main) {
             try {
                 errorLayoutIsVisible.value = false
-                val result = recipeService.getAllRecipesForType(args.type).results
+                val recipesFromApi = recipeService.getAllRecipesForType(args.type).results
+                val favoritesRecipes = recipeDao.getAllRecipes()
+                val result = recipesFromApi.map{recipe->
+                    if(favoritesRecipes.find { it.id == recipe.id } != null)
+                        recipe.copy(isInFavorite = true)
+                    else
+                        recipe
+                }
                 recipes.value = result
             } catch (e: Exception){
+                Log.d("error", e.toString())
                 errorLayoutIsVisible.value = true
             }
         }
@@ -39,5 +47,6 @@ class RecipesTypeViewModel @Inject constructor(
 
     fun onRecipeFavoriteClick(recipe: Recipe){
         recipeDao.insertRecipe(recipe)
+        loadListRecipesOnClickItem()
     }
 }

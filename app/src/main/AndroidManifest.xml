@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.recipes">
     <uses-permission android:name="android.permission.INTERNET"/> <!--    7.0 запросить разрешение на доступ к интернету в манифесте-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:name="com.example.recipes.datasource.local.RecipesApp"
         android:allowBackup="true"
