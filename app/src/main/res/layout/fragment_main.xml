@@ -7,17 +7,29 @@
     tools:context=".presentation.mainmenu.MainMenuFragment" >
 
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <EditText
         android:id="@+id/searchName"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:ems="10"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@id/searchButton"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/searchButton"
@@ -84,6 +96,7 @@
         app:layout_constraintTop_toBottomOf="@id/cvBreakfast">>
 
         <ImageView
+            android:id="@+id/cvSnack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

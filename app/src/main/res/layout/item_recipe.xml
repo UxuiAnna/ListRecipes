@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:layout_marginTop="2dp">
 
     <ImageView
         android:id="@+id/imageRecipe"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/soup"/>
@@ -20,11 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="Name of recipes"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/imageRecipe"
         app:layout_constraintStart_toEndOf="@id/imageRecipe"
-        app:layout_constraintEnd_toStartOf="@id/iconFavorite"
         app:layout_constraintTop_toTopOf="@id/imageRecipe" />
 
     <ImageView
@@ -41,9 +41,9 @@
         android:id="@+id/iconDelete"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/textNameRecipe"
-        app:layout_constraintEnd_toStartOf="@id/iconFavorite"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textNameRecipe"
         app:srcCompat="@drawable/delete"/>
 

@@ -36,6 +36,10 @@ class RecipesTypeAdapter(val recipes: List<Recipe>,  val listener: TypeAdapterLi
         holder.binding.iconFavorite.setOnClickListener {
             listener.onRecipeFavoriteClick(recipe)
         }
+
+        holder.binding.iconDelete.setOnClickListener {
+            listener.onFavoriteDeleteClick(recipe)
+        }
     }
 
     override fun getItemCount(): Int {

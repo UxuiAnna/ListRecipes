@@ -43,7 +43,7 @@ class FavoritesFragment : Fragment(), FavoritesAdapterListener {
     }
 
     override fun onRecipeItemClick(recipe: Recipe) {
-        val action = FavoritesFragmentDirections.actionFavoritesFragment2ToPageRecipeFragment()
+        val action = FavoritesFragmentDirections.actionFavoritesFragment2ToPageRecipeFragment(id)
         findNavController().navigate(action)
     }
 

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.recipes.R
 import com.example.recipes.databinding.ItemRecipeBinding
 import com.example.recipes.domain.Recipe
@@ -12,6 +13,7 @@ import javax.inject.Inject
 interface QueryAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
     fun onRecipeFavoriteClick(recipe: Recipe)
+    fun onFavoriteDeleteClick(recipe: Recipe)
 }
 
 class RecipesQueryAdapter @Inject constructor(val recipes: List<Recipe>, val listener: QueryAdapterListener) :
@@ -33,6 +35,10 @@ class RecipesQueryAdapter @Inject constructor(val recipes: List<Recipe>, val lis
         holder.binding.iconFavorite.setOnClickListener {
             listener.onRecipeFavoriteClick(recipe)
         }
+
+        holder.binding.iconDelete.setOnClickListener {
+            listener.onFavoriteDeleteClick(recipe)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -44,7 +50,17 @@ class RecipesQueryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val binding = ItemRecipeBinding.bind(view)
     fun bind(recipe: Recipe) {
         binding.textNameRecipe.text = recipe.title
-//      binding.imageRecipe.setImageResource()
+        if (recipe.isInFavorite) {
+            binding.iconFavorite.visibility = View.GONE
+            binding.iconDelete.visibility = View.VISIBLE
+        } else {
+            binding.iconFavorite.visibility = View.VISIBLE
+            binding.iconDelete.visibility = View.GONE
+        }
+
+        Glide.with(itemView.context)
+            .load(recipe.image)
+            .into(binding.imageRecipe);
     }
 
 }

@@ -52,10 +52,9 @@ class RecipesTypeFragment: Fragment(),TypeAdapterListener {
         binding.errorView.visibility = View.INVISIBLE
     }
 
-
     //открыть страницу рецепта из списка (по типу)
     override fun onRecipeItemClick(recipe: Recipe) {
-        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment(recipe)
+        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment(id)
         findNavController().navigate(action)
     }
 
@@ -64,7 +63,8 @@ class RecipesTypeFragment: Fragment(),TypeAdapterListener {
         viewModel.onRecipeFavoriteClick(recipe)
     }
 
+    //удалить рецепт из списка избранное
     override fun onFavoriteDeleteClick(recipe: Recipe) {
-        TODO("Not yet implemented")
+        viewModel.onFavoriteDeleteClick(recipe)
     }
 }

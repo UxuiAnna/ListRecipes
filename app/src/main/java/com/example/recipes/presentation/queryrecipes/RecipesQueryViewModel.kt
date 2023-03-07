@@ -39,4 +39,9 @@ class RecipesQueryViewModel @Inject constructor(
     fun onRecipeFavoriteClick(recipe: Recipe){
         recipeDao.insertRecipe(recipe)
     }
+
+    fun onFavoriteDeleteClick(recipe: Recipe){
+        recipeDao.deleteRecipe(recipe)
+    }
+
 }

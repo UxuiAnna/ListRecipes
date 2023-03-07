@@ -32,7 +32,23 @@ class RecipesQueryFragment : Fragment(), QueryAdapterListener {
             val recipesAdapter = RecipesQueryAdapter(recipes, this)
             binding.rVQuery.adapter = recipesAdapter
         }
+
+        viewModel.errorLayoutIsVisible.observe(viewLifecycleOwner) { isVisible ->
+            if (isVisible)
+                showError()
+            else
+                hideError()
+        }
     }
+
+    fun showError() {
+        binding.errorView.visibility = View.VISIBLE
+    }
+
+    fun hideError() {
+        binding.errorView.visibility = View.INVISIBLE
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -42,12 +58,16 @@ class RecipesQueryFragment : Fragment(), QueryAdapterListener {
     //открыть страницу рецепта из списка (со списка из поиска)
     override fun onRecipeItemClick(recipe: Recipe) {
         val action =
-            RecipesQueryFragmentDirections.actionRecipesQueryFragmentToPageRecipeFragment(recipe)
+            RecipesQueryFragmentDirections.actionRecipesQueryFragmentToPageRecipeFragment(id)
         findNavController().navigate(action)
     }
 
     override fun onRecipeFavoriteClick(recipe: Recipe) {
       viewModel.onRecipeFavoriteClick(recipe)
+    }
+
+    override fun onFavoriteDeleteClick(recipe: Recipe) {
+        viewModel.onFavoriteDeleteClick(recipe)
     }
 }
 

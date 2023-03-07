@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.navigation.fragment.findNavController
+import com.example.recipes.R
 import com.example.recipes.databinding.FragmentMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,6 +32,7 @@ class MainMenuFragment : Fragment() {
         //подключаю слушатель на иконки в главном меню. по клику на иконку должен открыться список с рецептами данного раздела
         binding.cvBreakfast.setOnClickListener { openRecipesForType("breakfast") }
         binding.cvSideDish.setOnClickListener{ openRecipesForType("side dish") }
+        binding.cvSnack.setOnClickListener { openRecipesForType("snack") }
         binding.cvDesert.setOnClickListener { openRecipesForType("desert") }
         binding.cvDrink.setOnClickListener { openRecipesForType("drink") }
         binding.cvMainCourse.setOnClickListener { openRecipesForType("main course") }
@@ -39,11 +42,13 @@ class MainMenuFragment : Fragment() {
     }
 
     private fun openRecipesForType(type: String){
+        binding.progressBar.visibility = View.VISIBLE
         val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesTypeFragment(type)
         findNavController().navigate(action)
     }
 
     private fun openRecipesForQuery(query: String){
+        binding.progressBar.visibility = View.VISIBLE
         val action = MainMenuFragmentDirections.actionMainMenuFragmentToRecipesQueryFragment(query)
         findNavController().navigate(action)
     }

@@ -49,4 +49,9 @@ class RecipesTypeViewModel @Inject constructor(
         recipeDao.insertRecipe(recipe)
         loadListRecipesOnClickItem()
     }
+
+    fun onFavoriteDeleteClick(recipe: Recipe){
+        recipeDao.deleteRecipe(recipe)
+        loadListRecipesOnClickItem()
+    }
 }
