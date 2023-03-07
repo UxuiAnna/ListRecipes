@@ -1,7 +1,7 @@
 package com.example.recipes.datasource.remote
 
-import com.example.recipes.domain.Recipe
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -24,6 +24,13 @@ interface RecipeService {
 
     @GET("complexSearch")
     suspend fun getAllRecipes(
+        @Query("number") number: Int =100,
+        @Query("apiKey") apiKey: String = "de7bf41978a04f17bd0f0e4859d9fee0"
+    ): ComplexSearchRecipe
+
+    @GET("information")
+    suspend fun getInfoRecipe(
+        @Path("id") id: Int,
         @Query("number") number: Int =100,
         @Query("apiKey") apiKey: String = "de7bf41978a04f17bd0f0e4859d9fee0"
     ): ComplexSearchRecipe
