@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recipes.datasource.local.RecipeDao
 import com.example.recipes.datasource.remote.RecipeService
+import com.example.recipes.domain.InfoRecipe
 import com.example.recipes.domain.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -20,6 +21,7 @@ class PageRecipeViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val args = PageRecipeFragmentArgs.fromSavedStateHandle(savedStateHandle)
+    val recipe = MutableLiveData<InfoRecipe>()
     val recipes = MutableLiveData<List<Recipe>>()
     val errorLayoutIsVisible = MutableLiveData<Boolean>(false)
 
@@ -27,8 +29,8 @@ class PageRecipeViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.Main) {
             try {
                 errorLayoutIsVisible.value = false
-                val infoResult = recipeService.getInfoRecipe(args.id).results
-                recipes.value = infoResult
+                val infoResult = recipeService.getInfoRecipe(args.id)
+                recipe.value = infoResult
             } catch (e: Exception) {
                 errorLayoutIsVisible.value = true
             }
