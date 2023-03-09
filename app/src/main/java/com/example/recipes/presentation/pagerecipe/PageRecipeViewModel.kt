@@ -34,4 +34,33 @@ class PageRecipeViewModel @Inject constructor(
             }
         }
     }
+
+    fun loadListRecipesOnClickItem() {
+        viewModelScope.launch(Dispatchers.Main) {
+            try {
+                errorLayoutIsVisible.value = false
+                val recipesFromApi = recipeService.getAllRecipesForType(args.type).results
+                val favoritesRecipes = recipeDao.getAllRecipes()
+                val result = recipesFromApi.map { recipe ->
+                    if (favoritesRecipes.find { it.id == recipe.id } != null)
+                        recipe.copy(isInFavorite = true)
+                    else
+                        recipe
+                }
+                recipes.value = result
+            } catch (e: Exception) {
+                errorLayoutIsVisible.value = true
+            }
+        }
+    }
+
+    fun onRecipeFavoriteClick(recipe: Recipe) {
+        recipeDao.insertRecipe(recipe)
+        loadListRecipesOnClickItem()
+    }
+
+    fun onFavoriteDeleteClick(recipe: Recipe) {
+        recipeDao.deleteRecipe(recipe)
+        loadListRecipesOnClickItem()
+    }
 }

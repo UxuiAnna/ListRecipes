@@ -54,7 +54,7 @@ class RecipesTypeFragment: Fragment(),TypeAdapterListener {
 
     //открыть страницу рецепта из списка (по типу)
     override fun onRecipeItemClick(recipe: Recipe) {
-        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment(id)
+        val action = RecipesTypeFragmentDirections.actionListRecipesTypeFragmentToPageRecipeFragment(id)  //все время подчеркивает аргумент, то type не подходит, то id
         findNavController().navigate(action)
     }
 

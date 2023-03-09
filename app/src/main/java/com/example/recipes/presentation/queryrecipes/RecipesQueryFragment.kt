@@ -55,10 +55,10 @@ class RecipesQueryFragment : Fragment(), QueryAdapterListener {
         _binding = null
     }
 
-    //открыть страницу рецепта из списка (со списка из поиска)
+
     override fun onRecipeItemClick(recipe: Recipe) {
         val action =
-            RecipesQueryFragmentDirections.actionRecipesQueryFragmentToPageRecipeFragment(id)
+            RecipesQueryFragmentDirections.actionRecipesQueryFragmentToPageRecipeFragment(id)  //все время подчеркивает аргумент, то type не подходит, то id
         findNavController().navigate(action)
     }
 

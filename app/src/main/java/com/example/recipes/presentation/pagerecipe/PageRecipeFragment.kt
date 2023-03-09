@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 
 import com.example.recipes.databinding.FragmentPageRecipeBinding
+import com.example.recipes.domain.Recipe
 import com.example.recipes.presentation.mainmenu.MainMenuFragmentDirections
 import com.example.recipes.presentation.recipestypefragment.RecipesTypeViewModel
 
@@ -28,7 +29,31 @@ class PageRecipeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.loadRecipesInfo()
+        viewModel.errorLayoutIsVisible.observe(viewLifecycleOwner){isVisible->
+            if(isVisible)
+                showError()
+            else
+                hideError()
         }
+    }
+
+    fun showError() {
+        binding.errorView.visibility = View.VISIBLE
+    }
+
+    fun hideError() {
+        binding.errorView.visibility = View.INVISIBLE
+    }
+
+    // эти функции исполняет адаптер, но на странице рецепта нет адаптера. Куда их подключить?
+    fun onRecipeFavoriteClick(recipe: Recipe){
+        viewModel.onRecipeFavoriteClick(recipe)
+    }
+
+    fun onFavoriteDeleteClick(recipe: Recipe) {
+        viewModel.onFavoriteDeleteClick(recipe)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

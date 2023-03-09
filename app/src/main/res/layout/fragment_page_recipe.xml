@@ -23,36 +23,163 @@
         <TextView
             android:id="@+id/nameRecipe"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageRecipe"
+            app:layout_constraintTop_toBottomOf="@id/imagePerson"
             android:layout_marginStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:textColor="#454545"
-            android:textSize="22sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:text="Name recipe" />
 
+
+<!--        как добавить игридиенты списком?-->
         <TextView
-            android:id="@+id/descriptionRecipe"
+            android:id="@+id/ingredientsRecipe"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nameRecipe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
-            android:text="Description recipe" />
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Ingredients:" />
+
+        <TextView
+            android:id="@+id/textOfIngredientsRecipe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ingredientsRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:text="Ingredients text" />
+
+        <TextView
+            android:id="@+id/cooking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textOfIngredientsRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Cooking:" />
+
+        <TextView
+            android:id="@+id/cookingText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:text="Cooking text" />
 
         <ImageView
             android:id="@+id/addToFavorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/nameRecipe"
-            app:layout_constraintBottom_toBottomOf="@id/nameRecipe"
+            app:layout_constraintTop_toTopOf="@id/imagePerson"
+            app:layout_constraintBottom_toBottomOf="@id/imagePerson"
             android:layout_marginEnd="20dp"
             android:src="@drawable/favorite" />
+
+        <ImageView
+            android:id="@+id/iconDelete"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imagePerson"
+            app:layout_constraintBottom_toBottomOf="@id/imagePerson"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/delete" />
+
+        <ImageView
+            android:id="@+id/addToCart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintEnd_toStartOf="@id/addToFavorite"
+            app:layout_constraintTop_toTopOf="@id/imagePerson"
+            app:layout_constraintBottom_toBottomOf="@id/imagePerson"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/add_shopping_cart" />
+
+        <ImageView
+            android:id="@+id/imagePerson"
+            app:layout_constraintTop_toBottomOf="@id/imageRecipe"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/person_24" />
+
+        <TextView
+            android:id="@+id/numberOfPersons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/imagePerson"
+            app:layout_constraintBottom_toBottomOf="@id/imagePerson"
+            app:layout_constraintStart_toEndOf="@id/imagePerson"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="2" />
+
+
+        <ImageView
+            android:id="@+id/cookingTimeImage"
+            app:layout_constraintTop_toBottomOf="@id/imageRecipe"
+            app:layout_constraintStart_toEndOf="@id/numberOfPersons"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/time_24" />
+
+        <TextView
+            android:id="@+id/cookingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/imagePerson"
+            app:layout_constraintBottom_toBottomOf="@id/imagePerson"
+            app:layout_constraintStart_toEndOf="@id/cookingTimeImage"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="45" />
+
+        <TextView
+            android:id="@+id/minInCookingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/imagePerson"
+            app:layout_constraintBottom_toBottomOf="@id/imagePerson"
+            app:layout_constraintStart_toEndOf="@id/cookingTime"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="min" />
+
+        <TextView
+            android:id="@+id/errorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ошибка"
+            android:textColor="#F7574C"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
