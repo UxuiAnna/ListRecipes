@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.recipes.databinding.FragmentFavoritesBinding
-import com.example.recipes.domain.Recipe
+import com.example.recipes.domain.recipe.Recipe
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

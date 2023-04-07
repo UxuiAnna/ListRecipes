@@ -1,12 +1,10 @@
 package com.example.recipes.presentation.favorites
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recipes.datasource.local.RecipeDao
-import com.example.recipes.datasource.local.RecipesDataBase
-import com.example.recipes.domain.Recipe
+import com.example.recipes.domain.recipe.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

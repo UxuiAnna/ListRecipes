@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.recipes.R
 import com.example.recipes.databinding.ItemRecipeBinding
-import com.example.recipes.domain.Recipe
+import com.example.recipes.domain.recipe.Recipe
 import javax.inject.Inject
 
 interface QueryAdapterListener {

@@ -1,8 +1,6 @@
 package com.example.recipes.datasource.remote
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import com.example.recipes.domain.Recipe
+import com.example.recipes.domain.recipe.Recipe
 
 
 data class ComplexSearchRecipe(

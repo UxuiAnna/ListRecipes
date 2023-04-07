@@ -1,15 +1,13 @@
 package com.example.recipes.presentation.recipestypefragment
 
 import android.view.LayoutInflater
-import android.view.LayoutInflater.from
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.recipes.R
 import com.example.recipes.databinding.ItemRecipeBinding
-import com.example.recipes.domain.Recipe
-import kotlinx.coroutines.NonDisposableHandle.parent
+import com.example.recipes.domain.recipe.Recipe
 
 interface TypeAdapterListener {
     fun onRecipeItemClick(recipe: Recipe)
@@ -17,7 +15,7 @@ interface TypeAdapterListener {
     fun onFavoriteDeleteClick(recipe: Recipe)
 }
 
-class RecipesTypeAdapter(val recipes: List<Recipe>,  val listener: TypeAdapterListener) :
+class RecipesTypeAdapter(val recipes: List<Recipe>, val listener: TypeAdapterListener) :
     RecyclerView.Adapter<RecipeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {

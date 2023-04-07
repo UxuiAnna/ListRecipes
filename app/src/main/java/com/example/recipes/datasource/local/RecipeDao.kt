@@ -1,8 +1,7 @@
 package com.example.recipes.datasource.local
 
 import androidx.room.*
-import com.example.recipes.domain.Recipe
-import javax.inject.Inject
+import com.example.recipes.domain.recipe.Recipe
 
 @Dao
 interface RecipeDao{

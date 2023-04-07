@@ -1,6 +1,6 @@
 package com.example.recipes.datasource.remote
 
-import com.example.recipes.domain.InfoRecipe
+import com.example.recipes.domain.recipe.InfoRecipe
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

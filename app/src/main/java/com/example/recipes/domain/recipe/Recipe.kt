@@ -1,4 +1,4 @@
-package com.example.recipes.domain
+package com.example.recipes.domain.recipe
 
 import android.os.Parcelable
 import androidx.room.Entity

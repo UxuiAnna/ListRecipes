@@ -6,12 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 
 import com.example.recipes.databinding.FragmentPageRecipeBinding
-import com.example.recipes.domain.Recipe
-import com.example.recipes.presentation.mainmenu.MainMenuFragmentDirections
-import com.example.recipes.presentation.recipestypefragment.RecipesTypeViewModel
+import com.example.recipes.domain.recipe.Recipe
 
 class PageRecipeFragment : Fragment() {
     private var _binding: FragmentPageRecipeBinding? = null
