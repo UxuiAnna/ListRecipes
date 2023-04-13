@@ -8,8 +8,8 @@ data class InfoRecipe(
     val sourceUrl: String,
     val servings: Int,
     val readyInMinutes: Int,
-    val extendedIngredients: List<ExtendedIngredients>  //что это? Как его заполнить?
-    )
+    val extendedIngredients: List<ExtendedIngredients>,  //что это? Как его заполнить?
+)
 
 
 data class ExtendedIngredients(

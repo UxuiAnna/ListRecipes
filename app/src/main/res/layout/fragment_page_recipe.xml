@@ -22,16 +22,18 @@
 
         <TextView
             android:id="@+id/nameRecipe"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imagePerson"
-            android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:text="Name recipe"
             android:textColor="#454545"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:text="Name recipe" />
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagePerson" />
 
 
 <!--        как добавить игридиенты списком?-->
@@ -82,30 +84,20 @@
             android:text="Cooking text" />
 
         <ImageView
-            android:id="@+id/addToFavorite"
+            android:id="@+id/favorite"
             android:layout_width="30dp"
             android:layout_height="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/imagePerson"
             app:layout_constraintBottom_toBottomOf="@id/imagePerson"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/favorite" />
-
-        <ImageView
-            android:id="@+id/iconDelete"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/imagePerson"
-            app:layout_constraintBottom_toBottomOf="@id/imagePerson"
-            android:layout_marginEnd="20dp"
-            android:src="@drawable/delete" />
+            tools:src="@drawable/favorite" />
 
         <ImageView
             android:id="@+id/addToCart"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:layout_constraintEnd_toStartOf="@id/addToFavorite"
+            app:layout_constraintEnd_toStartOf="@id/favorite"
             app:layout_constraintTop_toTopOf="@id/imagePerson"
             app:layout_constraintBottom_toBottomOf="@id/imagePerson"
             android:layout_marginEnd="20dp"
@@ -154,7 +146,7 @@
             android:layout_marginStart="5dp"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:text="45" />
+            tools:text="45"/>
 
         <TextView
             android:id="@+id/minInCookingTime"

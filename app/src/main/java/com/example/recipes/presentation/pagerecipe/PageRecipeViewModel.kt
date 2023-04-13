@@ -22,7 +22,7 @@ class PageRecipeViewModel @Inject constructor(
 
     private val args = PageRecipeFragmentArgs.fromSavedStateHandle(savedStateHandle)
     val recipe = MutableLiveData<InfoRecipe>()
-    val recipes = MutableLiveData<List<Recipe>>()
+    val isInFavorite = MutableLiveData(false)
     val errorLayoutIsVisible = MutableLiveData<Boolean>(false)
 
     fun loadRecipesInfo() {
@@ -41,15 +41,10 @@ class PageRecipeViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.Main) {
             try {
                 errorLayoutIsVisible.value = false
-                val recipesFromApi = recipeService.getAllRecipesForType(args.type).results
+                val recipeFromApi = recipeService.getInfoRecipe(args.id)
                 val favoritesRecipes = recipeDao.getAllRecipes()
-                val result = recipesFromApi.map { recipe ->
-                    if (favoritesRecipes.find { it.id == recipe.id } != null)
-                        recipe.copy(isInFavorite = true)
-                    else
-                        recipe
-                }
-                recipes.value = result
+                isInFavorite.value = (favoritesRecipes.find { it.id == recipeFromApi.id } != null)
+                recipe.value = recipeFromApi
             } catch (e: Exception) {
                 errorLayoutIsVisible.value = true
             }

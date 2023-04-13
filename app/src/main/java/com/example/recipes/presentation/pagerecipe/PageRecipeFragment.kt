@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.example.recipes.R
 
 import com.example.recipes.databinding.FragmentPageRecipeBinding
 import com.example.recipes.domain.recipe.Recipe
@@ -26,6 +27,18 @@ class PageRecipeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.loadRecipesInfo()
+
+        viewModel.recipe.observe(viewLifecycleOwner){recipe->
+
+        }
+
+        viewModel.isInFavorite.observe(viewLifecycleOwner){isInFavorite->
+            if(isInFavorite)
+                binding.favorite.setImageResource(R.drawable.favorite)
+            else
+                binding.favorite.setImageResource(R.drawable.delete)
+        }
+
         viewModel.errorLayoutIsVisible.observe(viewLifecycleOwner){isVisible->
             if(isVisible)
                 showError()
